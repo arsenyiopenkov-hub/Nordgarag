@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NORD GARAGE — ТО и ремонт с фиксированной ценой</title>
+  <meta name="description" content="Автосервис NORD GARAGE: калькулятор стоимости ремонта, акции на ТО и онлайн-запись. Фиксированная смета до заезда." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#hero">
+        <span class="logo__mark"></span>
+        NORD GARAGE
+      </a>
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <a href="#calc">Калькулятор</a>
+        <a href="#promo">Акции</a>
+        <a href="#book">Запись на ТО</a>
+        <a class="nav__phone" href="tel:+74951204580">+7 (495) 120-45-80</a>
+      </nav>
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__media" aria-hidden="true">
+        <img src="assets/hero-car.jpg" alt="" />
+        <div class="hero__shade"></div>
+      </div>
+      <div class="container hero__content">
+        <p class="eyebrow">Премиум-сервис · Москва</p>
+        <h1>Ремонт с ценой до заезда — без сюрпризов на подъёмнике</h1>
+        <p class="lead">Считайте стоимость за 30 секунд, фиксируйте смету и записывайтесь на ТО онлайн. Европейские, японские и корейские авто — в одном боксе.</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="#book">Записаться на ТО</a>
+          <a class="btn btn--ghost" href="#calc">Рассчитать ремонт</a>
+        </div>
+        <ul class="stats">
+          <li><strong>15 мин</strong><span>диагностика при записи</span></li>
+          <li><strong>0 ₽</strong><span>переплата сверх сметы</span></li>
+          <li><strong>12 мес</strong><span>гарантия на работы</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="calc" id="calc">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Калькулятор</p>
+          <h2>Узнайте стоимость до того, как отдать ключи</h2>
+          <p class="section-head__text">Выберите услугу и класс авто — ориентир по цене сразу. Точную смету подтвердим после диагностики.</p>
+        </div>
+
+        <div class="calc__grid">
+          <form class="card calc__form" id="calc-form">
+            <label class="field">
+              <span>Услуга</span>
+              <select id="service" name="service"></select>
+            </label>
+            <div class="field">
+              <span>Класс автомобиля</span>
+              <div class="pills" id="car-class" role="group" aria-label="Класс автомобиля"></div>
+            </div>
+            <label class="field">
+              <span>Срочность</span>
+              <select id="urgency" name="urgency">
+                <option value="1">Обычная очередь</option>
+                <option value="1.18">В этот же день (+18%)</option>
+                <option value="1.32">Экспресс 4 часа (+32%)</option>
+              </select>
+            </label>
+            <label class="check">
+              <input type="checkbox" id="parts" />
+              <span>Включить расходники в расчёт</span>
+            </label>
+            <p class="hint">Это ориентир. Финальная цена — в карте ремонта, которую вы утверждаете до работ.</p>
+          </form>
+
+          <aside class="card calc__result">
+            <p class="calc__label">Ориентир стоимости</p>
+            <p class="calc__price" id="price">0 ₽</p>
+            <p class="calc__range" id="range"></p>
+            <ul class="calc__meta" id="meta"></ul>
+            <a class="btn btn--gold btn--full" href="#book" id="calc-cta">Зафиксировать эту смету</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo" id="promo">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Акции</p>
+          <h2>Сезон, когда экономить на ТО ещё выгодно</h2>
+        </div>
+        <div class="promo__grid">
+          <article class="card promo__card">
+            <span class="badge">до 31 октября</span>
+            <h3>−20% на плановое ТО</h3>
+            <p>Масло, фильтры, инспекция 36 точек. Акция при записи через сайт.</p>
+          </article>
+          <article class="card promo__card">
+            <span class="badge badge--mute">всегда</span>
+            <h3>Диагностика 0 ₽</h3>
+            <p>Если остаётесь на ремонт в тот же день — компьютерная диагностика бесплатно.</p>
+          </article>
+          <article class="card promo__card">
+            <span class="badge">зима</span>
+            <h3>Подготовка к холодам</h3>
+            <p>АКБ, антифриз, тормоза и щётки — пакет «Зима» от 4 900 ₽.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="container book__grid">
+        <div class="section-head section-head--left">
+          <p class="eyebrow">Онлайн-запись</p>
+          <h2>Выберите слот — мы подтвердим за 10 минут</h2>
+          <p class="section-head__text">Без звонка в час пик. Мастер, бокс и запчасти бронируются под ваш визит.</p>
+          <ul class="ticks">
+            <li>Работаем 8:00–22:00, без выходных</li>
+            <li>Мойка днища в подарок при ТО</li>
+            <li>Отчёт с фото — в мессенджер</li>
+          </ul>
+        </div>
+
+        <form class="card book__form" id="book-form" novalidate>
+          <label class="field">
+            <span>Имя</span>
+            <input type="text" name="name" autocomplete="name" required placeholder="Алексей" />
+          </label>
+          <label class="field">
+            <span>Телефон</span>
+            <input type="tel" name="phone" autocomplete="tel" required placeholder="+7 (___) ___-__-__" />
+          </label>
+          <label class="field">
+            <span>Услуга</span>
+            <select name="work" required>
+              <option value="" disabled selected>Выберите</option>
+              <option>Плановое ТО</option>
+              <option>Диагностика</option>
+              <option>Тормозная система</option>
+              <option>Ходовая</option>
+              <option>Двигатель / масла</option>
+              <option>Другое</option>
+            </select>
+          </label>
+          <div class="field-row">
+            <label class="field">
+              <span>Дата</span>
+              <input type="date" name="date" required />
+            </label>
+            <label class="field">
+              <span>Время</span>
+              <select name="time" required>
+                <option value="" disabled selected>—</option>
+                <option>09:00</option>
+                <option>11:00</option>
+                <option>13:00</option>
+                <option>15:00</option>
+                <option>17:00</option>
+                <option>19:00</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Комментарий</span>
+            <textarea name="note" rows="3" placeholder="Марка, год, что беспокоит"></textarea>
+          </label>
+          <button class="btn btn--gold btn--full" type="submit">Отправить заявку</button>
+          <p class="hint">Нажимая кнопку, вы соглашаетесь на звонок для подтверждения слота.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+      <div class="container contacts__grid">
+        <div>
+          <p class="eyebrow">Контакты</p>
+          <h2>Бокс на Автозаводской — заезд с Нагатинской</h2>
+          <address>
+            Москва, ул. Автозаводская, 12<br />
+            <a href="tel:+74951204580">+7 (495) 120-45-80</a><br />
+            Ежедневно 8:00–22:00
+          </address>
+        </div>
+        <div class="contacts__cta">
+          <p>Нужен совет, а не запись?</p>
+          <a class="btn btn--ghost" href="tel:+74951204580">Позвонить мастеру</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 NORD GARAGE</span>
+      <span>Гарантия 12 месяцев на работы и запчасти</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
